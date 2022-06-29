@@ -1,11 +1,16 @@
-import type { NextPage } from 'next';
+import { Table } from '~/components';
 
-const Home: NextPage = () => {
+import { Mock } from '~/utils/mock';
+
+export default function Home() {
+  const column = [
+    { id: 1, heading: 'Name', value: 'name' },
+    { id: 2, heading: 'Email', value: 'email' },
+  ];
+
   return (
     <div>
-      <h1>Olá Mundo!</h1>
+      <Table data={Mock} column={column} />
     </div>
   );
-};
-
-export default Home;
+}
